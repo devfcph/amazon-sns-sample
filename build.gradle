@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.4'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.streaming.aws.sns'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-core
+    implementation 'com.amazonaws:aws-java-sdk-core:1.12.425'
+
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sqs
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '1.12.425'
+
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sns
+//    implementation group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '1.9.3'
+
+
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sns
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '1.12.145'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

@@ -1,0 +1,12 @@
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: false
+    credentials:
+      access-key: access-key
+      secret-key: secret-key
+    end-point:
+      uri: queue-sns-endpoint
+server:
+  port : 8081
